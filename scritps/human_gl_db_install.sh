@@ -50,10 +50,10 @@ mkdir human
 cd ../
 
 # 移动并预处理germline seq
-bin/edit_imgt_file.pl fasta/human/human_V.fasta > database/human/human_V.fasta
-bin/edit_imgt_file.pl fasta/human/human_D.fasta > database/human/human_D.fasta
-bin/edit_imgt_file.pl fasta/human/human_J.fasta > database/human/human_J.fasta
-bin/edit_imgt_file.pl fasta/human/human_C.fasta > database/human/human_C.fasta
+bin/edit_imgt_file.pl ref_seq/human/human_V.fasta > database/human/human_V.fasta
+bin/edit_imgt_file.pl ref_seq/human/human_D.fasta > database/human/human_D.fasta
+bin/edit_imgt_file.pl ref_seq/human/human_J.fasta > database/human/human_J.fasta
+bin/edit_imgt_file.pl ref_seq/human/human_C.fasta > database/human/human_C.fasta
 
 # 转换为数据库格式
 bin/makeblastdb -parse_seqids -dbtype nucl -in database/human/human_V.fasta
