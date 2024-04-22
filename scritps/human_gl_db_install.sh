@@ -27,10 +27,10 @@ cat *J*.fasta > human_J.fasta
 # 确保在本地的序列位置在与igblast同级别的source文件夹
 mv ../../../source/IMGT_human_gl_C.fasta human_C.fasta
 
-# 处理mouse_C.fasta的序列名称，只留下IGHG*01这样的类型
+# 处理human_C.fasta的序列名称，只留下IGHG*01这样的类型
 awk -F '|' '/^>/ {sub(/^>.*/, ">"$2)} 1' human_C.fasta > tmp && mv tmp human_C.fasta
 
-# 处理mouse_C.fasta中的重复序列，使其变成IGHG1*01-1这样的形式
+# 处理human_C.fasta中的重复序列，使其变成IGHG1*01-1这样的形式
 awk '/^>/ {
     if ($0 in seen) {
         seen[$0]++;
